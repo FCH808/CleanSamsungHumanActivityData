@@ -21,7 +21,7 @@ The Dataset
 
 **(Source: README.txt in the data folder)**
 
-From raw to tidy data
+From Raw to Tidy Data
 ---------------------
 
 **The `run_analysis.R` script downloads the following dataset:**
