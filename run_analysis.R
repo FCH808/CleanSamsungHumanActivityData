@@ -12,6 +12,7 @@ cleanSamsungData <- function(){
      
      message("Reading Data..")
      
+     # step 1
      # Loading test DFs
      subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt", sep="")
      y_test <- read.table("UCI HAR Dataset/test/y_test.txt", sep="")
@@ -35,7 +36,7 @@ cleanSamsungData <- function(){
      features <- c("subject", "activity", as.vector(features$V2))
      colnames(big_DF) <- features
      
-     #step 2
+     # step 2
      message("Extracting mean and standard deviation measurments..")
      columnsToKeep <- colnames(big_DF)[grepl("subject|activity|mean\\(\\)+|std\\(\\)+", colnames(big_DF), perl=TRUE)]
      big_DF <- big_DF[,columnsToKeep]
@@ -44,7 +45,6 @@ cleanSamsungData <- function(){
      message("Naming activities")
      big_DF[["activity"]] <- activities[match(big_DF[['activity']], activities[["key"]]), "name"]
      
-     # DOUBLE CHECK ME
      # Step 5: Creating ndependent tidy data set with the average of each 
      #         variable for each activity and each subject. 
      message("Generating clean data set")
