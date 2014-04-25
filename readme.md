@@ -19,7 +19,7 @@ The Dataset
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-**(README.txt in the data folder)**
+**(Source: README.txt in the data folder)**
 
 From raw to tidy data
 ---------------------
