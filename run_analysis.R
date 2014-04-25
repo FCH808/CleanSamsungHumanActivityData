@@ -6,7 +6,7 @@ cleanSamsungData <- function(){
           message("Dataset folder not present in the working directory.\nDownloading Dataset...")
           url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
           download.file(url, "samsung.zip", method=ifelse(.Platform$OS.type=="windows", "internal", "curl"))
-          unzip("samsungdata.zip")
+          unzip("samsung.zip")
      }
      
      
