@@ -23,20 +23,20 @@ cleanSamsungData <- function(){
      x_train <- read.table("UCI HAR Dataset/train/X_train.txt", sep="")
      
      # Load activity labels
-     activities <- read.table("data/activity_labels.txt", sep="", col.names=c("key", "name"))
+     activities <- read.table("UCI HAR Dataset/activity_labels.txt", sep="", col.names=c("key", "name"))
      
-     message("Merging data")
+     message("Merging data..")
      test_DF <- cbind(subject_test, y_test, x_test)
      train_DF <- cbind(subject_train, y_train, x_train)
      big_DF <- rbind(test_DF, train_DF)
      
      # Change column names to indicative name
-     features <- read.table("data/features.txt", sep="")
+     features <- read.table("UCI HAR Dataset/features.txt", sep="")
      features <- c("subject", "activity", as.vector(features$V2))
      colnames(big_DF) <- features
      
      #step 2
-     message("Extracting mean and standard deviation measurments")
+     message("Extracting mean and standard deviation measurments..")
      columnsToKeep <- colnames(big_DF)[grepl("subject|activity|mean\\(\\)+|std\\(\\)+", colnames(big_DF), perl=TRUE)]
      big_DF <- big_DF[,columnsToKeep]
      
